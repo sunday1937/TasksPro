@@ -15,6 +15,17 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            resValue "string", "AppName", "app1"
+        }
+    }
+    lintOptions {
+        // true--检查所有问题点，包含其他默认关闭项
+        checkAllWarnings true
+//        // true--生成txt格式报告(默认false)
+//        textReport true
+//        // 重定向输出；可以是文件或'stdout'
+//        textOutput 'stdout'
     }
 }
 
