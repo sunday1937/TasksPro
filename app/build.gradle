@@ -14,9 +14,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 添加代码
+            resValue "string", "AppName", "app_release"
         }
+        // 添加代码
         debug {
-            resValue "string", "AppName", "app1"
+            resValue "string", "AppName", "app_debug"
         }
     }
     lintOptions {
@@ -26,6 +29,18 @@ android {
 //        textReport true
 //        // 重定向输出；可以是文件或'stdout'
 //        textOutput 'stdout'
+    }
+
+    splits {
+        // Screen density split settings
+        density {
+
+            // Enable or disable the density split mechanism
+            enable true
+
+            // Exclude these densities from splits
+            exclude "ldpi", "tvdpi", "xxhdpi", "xxxhdpi"
+        }
     }
 }
 
